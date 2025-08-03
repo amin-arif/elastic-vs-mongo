@@ -36,4 +36,10 @@ public class ProductRestController {
 		return ResponseEntity.ok("Bulk save success. Execution time: " + executionTime + " s");
 	}
 
+	@PostMapping("/save-one-by-one")
+	public ResponseEntity<String> saveProductsIndividually(@RequestBody BulkDTO dto) {
+		double timeTaken = productService.saveIndividually(dto);
+		return ResponseEntity.ok("Saved " + dto.getBulkSize() + " products individually in " + timeTaken + " seconds.");
+	}
+
 }

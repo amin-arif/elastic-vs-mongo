@@ -13,4 +13,6 @@ public interface ProductService {
 
 	Double saveBulkProducts(BulkDTO bulkDTO);
 
+	double saveIndividually(BulkDTO dto);
+
 }
